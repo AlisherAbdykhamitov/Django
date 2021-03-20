@@ -1,0 +1,27 @@
+<div class="main">
+    <button id="add">Add Task</button>
+    <hr>
+    <h1>
+        {% if not completed %}
+                Tasks in "{{ todo }}"
+            {% else %}
+                Completed tasks in "{{ todo }}"
+            {% endif %}</h1>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Created</th>
+            <th>Due on</th>
+            <th>Owner</th>
+            <th>Mark</th>
+        </tr>
+
+    {% block body %}
+    {% endblock %}
+    </table>
+    <button class="tasks">
+        {% if not completed %}View completed tasks
+        {% else %} View incomplete tasks
+    {% endif %}</button>
+<button class="delete">Delete this list</button>
+</div>

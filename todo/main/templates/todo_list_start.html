@@ -1,0 +1,17 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% for task in tasks %}
+    <tr>
+        <th style="color: #157ffb">{{ task.name }}</th>
+        <th>{{ task.created }}</th>
+        <th>{{ task.due }}</th>
+        <th>{{ task.owner }}</th>
+        <th><button class="mark">
+            {% if task.complete %}
+                Not Done
+            {% else %}
+                Done
+            {% endif %}</button></th>
+    </tr>
+{% endfor %}
+{% endblock %}
